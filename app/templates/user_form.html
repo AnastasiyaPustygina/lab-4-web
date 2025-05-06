@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>{% if form.id.data %}Редактировать{% else %}Создать{% endif %} пользователя</h1>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.username.label }} {{ form.username() }}
+    </div>
+    <div>
+        {{ form.password.label }} {{ form.password() }}
+    </div>
+    <div>
+        {{ form.first_name.label }} {{ form.first_name() }}
+    </div>
+    <div>
+        {{ form.last_name.label }} {{ form.last_name() }}
+    </div>
+    <div>
+        {{ form.middle_name.label }} {{ form.middle_name() }}
+    </div>
+    <div>
+        {{ form.role_id.label }} {{ form.role_id() }}
+    </div>
+    <div>
+        {{ form.submit() }}
+    </div>
+</form>
+{% endblock %}
